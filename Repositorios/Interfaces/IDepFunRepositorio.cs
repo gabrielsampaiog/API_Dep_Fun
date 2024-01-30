@@ -14,7 +14,7 @@ namespace API_Dep_Fun.Repositorios.Interfaces
         Task<Funcionario> BuscarFuncionario(int id_fun);
         Task<Funcionario> AdicionarFuncionario(Funcionario funcionario);
         Task<Funcionario> AtualizarFuncionario(Funcionario funcionario, int id_fun);
-        Task<bool> ApagarFuncionario(int id_dep,int id_fun);
+        Task<bool> ApagarFuncionario(int id_fun);
 
     }
 }
