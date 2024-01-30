@@ -71,7 +71,7 @@ namespace API_Dep_Fun.Repositorios
         public async Task<Funcionario> BuscarFuncionario(int id_fun)
         {
 
-            return await _dbContext.Funcionarios.FirstOrDefaultAsync(x => x.DepartamentoId == id_fun);
+            return await _dbContext.Funcionarios.FirstOrDefaultAsync(x => x.Id == id_fun);
 
         }
 
