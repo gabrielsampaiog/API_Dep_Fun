@@ -1,7 +1,6 @@
 ﻿using API_Dep_Fun.Data;
 using API_Dep_Fun.Models;
 using API_Dep_Fun.Repositorios.Interfaces;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace API_Dep_Fun.Repositorios
@@ -69,10 +68,10 @@ namespace API_Dep_Fun.Repositorios
 
 
 
-        public async Task<Funcionario> BuscarFuncionario(int id_dep, int id_fun)
+        public async Task<Funcionario> BuscarFuncionario(int id_fun)
         {
 
-            return await _dbContext.Funcionarios.FirstOrDefaultAsync(x => x.DepartamentoId == id_dep && x.Id == id_fun);
+            return await _dbContext.Funcionarios.FirstOrDefaultAsync(x => x.DepartamentoId == id_fun);
 
         }
 
@@ -94,7 +93,7 @@ namespace API_Dep_Fun.Repositorios
 
         public async Task<Funcionario> AtualizarFuncionario(Funcionario funcionario, int id_fun)
         {
-            Funcionario funcionarioPorId = await BuscarFuncionario(funcionario.DepartamentoId,id_fun);
+            Funcionario funcionarioPorId = await BuscarFuncionario(id_fun);
 
             if (funcionarioPorId == null)
             {
@@ -115,9 +114,9 @@ namespace API_Dep_Fun.Repositorios
         }
 
 
-        public async Task<bool> ApagarFuncionario(int id_dep,int id_fun)
+        public async Task<bool> ApagarFuncionario(int id_fun)
         {
-            Funcionario funcionarioPorId = await BuscarFuncionario(id_dep, id_fun);
+            Funcionario funcionarioPorId = await BuscarFuncionario(id_fun);
 
             if (funcionarioPorId == null)
             {

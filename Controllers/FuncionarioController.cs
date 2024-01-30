@@ -24,10 +24,10 @@ namespace API_Dep_Fun.Controllers
             return Ok(funcionarios);
         }
 
-        [HttpGet("BuscarFun/{id_dep}/{id_fun}")]
-        public async Task<ActionResult<Funcionario>> BuscarFuncionario(int id_dep, int id_fun)
+        [HttpGet("BuscarFun/{id_fun}")]
+        public async Task<ActionResult<Funcionario>> BuscarFuncionario(int id_fun)
         {
-            Funcionario funcionario = await _depFunRepositorio.BuscarFuncionario(id_dep, id_fun);
+            Funcionario funcionario = await _depFunRepositorio.BuscarFuncionario(id_fun);
             return Ok(funcionario);
         }
 
