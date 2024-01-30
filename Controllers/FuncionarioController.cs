@@ -50,9 +50,9 @@ namespace API_Dep_Fun.Controllers
 
         [HttpDelete("ApagarDep/{id_dep}")]
 
-        public async Task<ActionResult<Funcionario>> ApagarFuncionario(int id_dep,int id_fun)
+        public async Task<ActionResult<Funcionario>> ApagarFuncionario(int id_fun)
         {
-            bool apagado = await _depFunRepositorio.ApagarFuncionario(id_dep,id_fun);
+            bool apagado = await _depFunRepositorio.ApagarFuncionario(id_fun);
             return Ok(apagado);
         }
     }
