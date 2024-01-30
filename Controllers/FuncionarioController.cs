@@ -48,7 +48,7 @@ namespace API_Dep_Fun.Controllers
             return Ok(funcionarioModel);
         }
 
-        [HttpDelete("ApagarDep/{id_dep}")]
+        [HttpDelete("ApagarFun/{id_fun}")]
 
         public async Task<ActionResult<Funcionario>> ApagarFuncionario(int id_fun)
         {
